@@ -3,9 +3,15 @@ import 'package:temp/widgets/rounded_avatar.dart';
 
 class Comment extends StatelessWidget {
   final bool showImage;
+  final String userName;
+  final String text;
+  final String dateTime;
   Comment({
     Key? key,
     this.showImage = true,
+    required this.userName,
+    required this.text,
+    this.dateTime = '',
   }) : super(key: key);
 
   @override
@@ -23,18 +29,17 @@ class Comment extends StatelessWidget {
             RichText(
                 text: TextSpan(children: [
               TextSpan(
-                  text: 'userABC',
+                  text: userName,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black87)),
               TextSpan(text: '  '),
-              TextSpan(
-                  text: 'i like this picture!!',
-                  style: TextStyle(color: Colors.black87))
+              TextSpan(text: text, style: TextStyle(color: Colors.black87))
             ])),
-            Text(
-              '2w',
-              style: TextStyle(color: Colors.grey[400], fontSize: 10),
-            )
+            if (dateTime != '')
+              Text(
+                dateTime,
+                style: TextStyle(color: Colors.grey[400], fontSize: 10),
+              )
           ],
         ),
       ],

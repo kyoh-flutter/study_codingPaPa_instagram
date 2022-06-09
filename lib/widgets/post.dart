@@ -35,7 +35,9 @@ class _PostState extends State<Post> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
       child: Comment(
-        showImage: false,
+        userName: 'kyoh',
+        text: 'i love you',
+        dateTime: '2w',
       ),
     );
   }
