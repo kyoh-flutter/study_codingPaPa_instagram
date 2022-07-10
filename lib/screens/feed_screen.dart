@@ -9,7 +9,7 @@ class FeedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        leading: IconButton(
+        leading: const IconButton(
           onPressed: null,
           icon: Icon(
             CupertinoIcons.photo_camera_solid,

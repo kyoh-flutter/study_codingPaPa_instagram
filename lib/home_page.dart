@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:temp/constans/screen_size.dart';
 import 'package:temp/screens/feed_screen.dart';
 import 'package:temp/screens/profile_screen.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({
+  const HomePage({
     Key? key,
   }) : super(key: key);
 
@@ -37,8 +38,8 @@ class _HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
 
-  static List<Widget> _screens = <Widget>[
-    FeedScreen(),
+  static final List<Widget> _screens = <Widget>[
+    const FeedScreen(),
     Container(
       color: Colors.blueAccent,
     ),
@@ -48,11 +49,12 @@ class _HomePageState extends State<HomePage> {
     Container(
       color: Colors.deepPurpleAccent,
     ),
-    Profile(),
+    const Profile(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    size ??= MediaQuery.of(context).size;
     return Scaffold(
       body: IndexedStack(
         index: _selectedIndex,
@@ -71,7 +73,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onBtnItemClick(int index) {
-    print(index);
     setState(() {
       _selectedIndex = index;
     });

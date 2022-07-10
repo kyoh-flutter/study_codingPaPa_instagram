@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 class RoundedAvatar extends StatelessWidget {
   final double size;
-  RoundedAvatar({
+  const RoundedAvatar({
     Key? key,
     this.size = 30,
   }) : super(key: key);

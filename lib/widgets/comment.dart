@@ -6,7 +6,7 @@ class Comment extends StatelessWidget {
   final String userName;
   final String text;
   final String dateTime;
-  Comment({
+  const Comment({
     Key? key,
     this.showImage = true,
     required this.userName,
@@ -18,9 +18,9 @@ class Comment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (showImage) RoundedAvatar(size: 24),
+        if (showImage) const RoundedAvatar(size: 24),
         if (showImage)
-          SizedBox(
+          const SizedBox(
             width: 9,
           ),
         Column(
@@ -30,10 +30,11 @@ class Comment extends StatelessWidget {
                 text: TextSpan(children: [
               TextSpan(
                   text: userName,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black87)),
-              TextSpan(text: '  '),
-              TextSpan(text: text, style: TextStyle(color: Colors.black87))
+              const TextSpan(text: '  '),
+              TextSpan(
+                  text: text, style: const TextStyle(color: Colors.black87))
             ])),
             if (dateTime != '')
               Text(

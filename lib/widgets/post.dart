@@ -32,8 +32,8 @@ class _PostState extends State<Post> {
   }
 
   Padding _postCaption() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
       child: Comment(
         userName: 'kyoh',
         text: 'i love you',
@@ -43,8 +43,8 @@ class _PostState extends State<Post> {
   }
 
   Padding _postLikes() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 14.0),
+    return const Padding(
+      padding: EdgeInsets.only(left: 14.0),
       child: Text(
         '12000 likes',
         style: TextStyle(fontWeight: FontWeight.bold),
@@ -56,23 +56,23 @@ class _PostState extends State<Post> {
     return Row(
       children: [
         IconButton(
-          icon: ImageIcon(AssetImage('assets/images/bookmark.png')),
+          icon: const ImageIcon(AssetImage('assets/images/bookmark.png')),
           color: Colors.black87,
           onPressed: () {},
         ),
         IconButton(
-          icon: ImageIcon(AssetImage('assets/images/comment.png')),
+          icon: const ImageIcon(AssetImage('assets/images/comment.png')),
           color: Colors.black87,
           onPressed: () {},
         ),
         IconButton(
-          icon: ImageIcon(AssetImage('assets/images/direct_message.png')),
+          icon: const ImageIcon(AssetImage('assets/images/direct_message.png')),
           color: Colors.black87,
           onPressed: () {},
         ),
-        Spacer(),
+        const Spacer(),
         IconButton(
-          icon: ImageIcon(AssetImage('assets/images/heart_selected.png')),
+          icon: const ImageIcon(AssetImage('assets/images/heart_selected.png')),
           color: Colors.black87,
           onPressed: () {},
         ),
@@ -83,14 +83,14 @@ class _PostState extends State<Post> {
   Widget _postHeader() {
     return Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: RoundedAvatar(),
         ),
-        Expanded(child: Text('userName')),
+        const Expanded(child: Text('userName')),
         IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.more_horiz,
               color: Colors.black87,
             ))
