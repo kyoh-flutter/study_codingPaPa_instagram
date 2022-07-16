@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:temp/constans/screen_size.dart';
 import 'package:temp/widgets/profile_body.dart';
+import 'package:temp/widgets/profile_side_menu.dart';
 
 enum MenuStatus { opened, closed }
 
@@ -48,14 +49,10 @@ class _ProfileState extends State<Profile> {
             transform: Matrix4.translationValues(bodyXpos, 0, 0),
           ),
           AnimatedContainer(
-            curve: Curves.easeInOut,
-            transform: Matrix4.translationValues(menuXpos, 0, 0),
-            duration: duration,
-            child: Container(
-              width: menuWidth,
-              color: Colors.deepPurpleAccent,
-            ),
-          ),
+              curve: Curves.easeInOut,
+              transform: Matrix4.translationValues(menuXpos, 0, 0),
+              duration: duration,
+              child: ProfileSideMenu(menuWidth)),
         ],
       ),
     );
