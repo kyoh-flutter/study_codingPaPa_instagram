@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:temp/widgets/sign_in_form.dart';
+import 'package:flutter/material.dart';
 import 'package:temp/widgets/sign_up_form.dart';
 
 class FadeStack extends StatefulWidget {

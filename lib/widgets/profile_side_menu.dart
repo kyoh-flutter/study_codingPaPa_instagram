@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/screens/auth_screen.dart';
 
 class ProfileSideMenu extends StatelessWidget {
   const ProfileSideMenu(this.menuWidth, {Key? key}) : super(key: key);
@@ -11,8 +12,8 @@ class ProfileSideMenu extends StatelessWidget {
           width: menuWidth,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              ListTile(
+            children: [
+              const ListTile(
                 title: Text(
                   'Setting',
                   style: TextStyle(
@@ -21,11 +22,15 @@ class ProfileSideMenu extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.exit_to_app,
                   color: Colors.black87,
                 ),
-                title: Text('Sign out'),
+                title: const Text('Sign out'),
+                onTap: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const AuthScreen()));
+                },
               ),
             ],
           )),

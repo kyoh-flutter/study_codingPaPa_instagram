@@ -1,5 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:temp/widgets/fadeStack.dart';
+import 'package:temp/widgets/fade_stack.dart';
 import 'package:temp/widgets/sign_in_form.dart';
 import 'package:temp/widgets/sign_up_form.dart';
 
@@ -18,6 +20,7 @@ class _AuthScreenState extends State<AuthScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Stack(
           children: [
@@ -26,7 +29,13 @@ class _AuthScreenState extends State<AuthScreen>
               left: 0,
               right: 0,
               bottom: 0,
-              child: ElevatedButton(
+              height: 40,
+              child: FlatButton(
+                color: Colors.white,
+                shape: const Border(
+                    top: BorderSide(
+                  color: Colors.grey,
+                )),
                 onPressed: () {
                   setState(() {
                     if (selectedForm == 0) {
